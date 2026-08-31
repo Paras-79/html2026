@@ -1,494 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Daily Pulse News</title>
-
-    <link rel="shortcut icon" href="download.png" type="image/png">
-
-    <style>
-
-        :root {
-            --ink: #111;
-            --accent: crimson;
-            --bg: #f4f4f4;
-            --line: #ddd;
-            --white: #fff;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            line-height: 1.6;
-            font-family: 'Franklin Gothic Medium',
-                         'Arial Narrow',
-                         Arial,
-                         sans-serif;
-            background-color: var(--bg);
-            color: var(--ink);
-        }
-
-
-        /* ================= HEADER ================= */
-
-        header {
-            background-color: var(--white);
-            text-align: center;
-            border-bottom: 3px solid var(--ink);
-            padding: 14px 40px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            margin: 2px;
-            color: #666;
-            font-style: italic;
-            font-size: 1em;
-        }
-
-
-        /* ================= NAVIGATION ================= */
-
-        nav {
-            background-color: var(--ink);
-        }
-
-        nav ul {
-            list-style: none;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            text-decoration: none;
-            display: block;
-            padding: 12px 18px;
-            color: #f4f4f4;
-            font-weight: bold;
-            transition: 0.3s;
-            font-family: Arial;
-        }
-
-        /* WHOLE BLOCK BECOMES CRIMSON */
-        nav a:hover {
-            background-color: crimson;
-            color: white;
-        }
-
-
-        /* ================= MAIN LAYOUT ================= */
-
-        .layout {
-           
-            margin: 20px auto;
-            display: grid;
-            grid-template-columns: 2.5fr 1fr;
-            padding:20px;
-            gap: 30px;
-            max-width: 1000px;
-        }
-
-
-        /* ================= BREAKING ================= */
-
-        .breaking {
-            background-color: var(--white);
-
-            border-left: 5px solid var(--accent);
-
-            padding: 12px 15px;
-
-            font-weight: bold;
-
-            margin-top: 0;
-        }
-
-
-        /* ================= SECTIONS ================= */
-
-        main section {
-            background-color: var(--white);
-
-            padding: 20px;
-
-            margin-bottom: 25px;
-
-            border: 1px solid var(--line);
-        }
-
-        .section-title {
-            margin-top: 0;
-
-            padding-bottom: 8px;
-
-            border-bottom: 2px solid var(--accent);
-
-            color: var(--accent);
-        }
-
-
-        /* ================= ARTICLE ================= */
-
-        article {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 20px;
-        }
-
-        article figure {
-            margin: 0;
-            flex : 0 0 165px;
-        }
-
-        article img {
-            width: 160px;
-            height: 140px;
-            object-fit: cover;
-            display: block;
-        }
-
-        figcaption {
-            font-size: 13px;
-            color: #666;
-
-            margin-top: 5px;
-        }
-
-        article h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-
-            font-size: 24px;
-        }
-
-        article p {
-            margin-top: 0;
-            color: #555;
-        }
-
-
-        /* ================= SIDEBAR ================= */
-
-        aside {
-            background-color: var(--white);
-
-            border: 1px solid var(--line);
-
-            padding: 20px;
-
-            height: fit-content;
-        }
-
-        aside section {
-            border-bottom: 1px solid var(--line);
-
-            padding-bottom: 15px;
-
-            margin-bottom: 20px;
-        }
-
-        aside section:last-child {
-            border-bottom: none;
-        }
-
-        aside h2 {
-            margin-top: 0;
-
-            color: var(--accent);
-
-            border-bottom: 2px solid var(--accent);
-
-            padding-bottom: 5px;
-        }
-        aside h3{
-            
-           border-bottom: 2px solid var(--accent); 
-           color: var(--accent);
-           padding-bottom: 5px;
-        }
-
-        aside ul,
-        aside ol {
-            padding-left: 25px;
-        }
-
-        aside li {
-            margin-bottom: 8px;
-        }
-
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            background-color: var(--ink);
-
-            color: white;
-
-            text-align: center;
-
-            padding: 20px;
-
-            margin-top: 30px;
-        }
-
-
-        /* ================= RESPONSIVE ================= */
-
-        @media (max-width: 768px) {
-
-            .layout {
-                width: 94%;
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                gap: 12px;
-            }
-
-            article {
-                grid-template-columns: 1fr;
-            }
-
-            article img {
-                height: 200px;
-            }
-
-            header {
-                padding: 20px 4%;
-            }
-        }
-
-    </style>
-</head>
-
-
-<body>
-
-    <!-- HEADER -->
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spice Route | Restaurant</title>
+    <link rel="shortcut icon" href="restaurant.png" type="image/png" />
+  </head>
+  <body>
     <header>
-
-        <h1>Daily Pulse</h1>
-
-        <p>Your trusted source for today's news</p>
-
-        <nav>
-            <ul>
-                <li><a href="#breaking">Breaking</a></li>
-                <li><a href="#politics">Politics</a></li>
-                <li><a href="#sports">Sports</a></li>
-                <li><a href="#technology">Technology</a></li>
-                <li><a href="#entertainment">Entertainment</a></li>
-            </ul>
-        </nav>
-
+      <h1>Spice Route</h1>
+      <nav>
+        <a href="#special">Today's Special</a>
+        <a href="#menu">Menu </a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#hours">Hours</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
-
-
-    <!-- MAIN LAYOUT -->
-
-    <div class="layout">
-
-        <main>
-
-            <!-- BREAKING -->
-
-            <p class="breaking" id="breaking">
-                <span style="color: red;">&bull;</span>
-                BREAKING: Parliament passes new digital privacy bill.
-            </p>
-
-
-            <!-- POLITICS -->
-
-            <section id="politics">
-
-                <h2 class="section-title">Politics</h2>
-
-                <article>
-
-                    <figure>
-                        <img src="parliament.png" alt="Parliament">
-                        <figcaption>Parliament in session</figcaption>
-                    </figure>
-
-                    <div>
-                        <h3>New Digital Privacy Bill Passed</h3>
-
-                        <p>
-                            Parliament has passed a new digital privacy bill
-                            aimed at protecting citizens' personal data.
-                        </p>
-                    </div>
-
-                </article>
-
-            </section>
-
-
-            <!-- SPORTS -->
-
-            <section id="sports">
-
-                <h2 class="section-title">Sports</h2>
-
-                <article>
-
-                    <figure>
-                        <img src="sports.png" alt="Indian Cricket Team">
-                        <figcaption>India's Team</figcaption>
-                    </figure>
-
-                    <div>
-                        <h3>India Wins Another Cricket Match</h3>
-
-                        <p>
-                            India secured an impressive victory in today's
-                            exciting cricket match.
-                        </p>
-                    </div>
-
-                </article>
-
-            </section>
-
-
-            <!-- TECHNOLOGY -->
-
-            <section id="technology">
-
-                <h2 class="section-title">Technology</h2>
-
-                <article>
-
-                    <figure>
-                        <img src="technology1.png"
-                             alt="Artificial Intelligence Technology">
-
-                        <figcaption>Latest AI Technology</figcaption>
-                    </figure>
-
-                    <div>
-                        <h3>AI Technology Continues to Grow</h3>
-
-                        <p>
-                            New artificial intelligence technologies are
-                            transforming industries around the world.
-                        </p>
-                    </div>
-
-                </article>
-
-            </section>
-
-
-            <!-- ENTERTAINMENT -->
-
-            <section id="entertainment">
-
-                <h2 class="section-title">Entertainment</h2>
-
-                <article>
-
-                    <figure>
-                        <img src="entertainment1.png" alt="New Movie">
-
-                        <figcaption>Latest Blockbuster Movie</figcaption>
-                    </figure>
-
-                    <div>
-                        <h3>New Movie Breaks Box Office Records</h3>
-
-                        <p>
-                            The latest blockbuster has received a strong
-                            response from audiences worldwide.
-                        </p>
-                    </div>
-
-                </article>
-
-            </section>
-
-        </main>
-
-
-        <!-- ASIDE -->
-
-        <aside>
-
-            <!-- TRENDING -->
-
-            <section>
-
-                <h2>Trending</h2>
-
-                <ul>
-                    <li>Market updates</li>
-                    <li>Weather updates</li>
-                    <li>World news</li>
-                    <li>Top headlines</li>
-                </ul>
-
-            </section>
-
-
-            <!-- POPULAR -->
-
-            <section>
-
-                <h2>Popular</h2>
-
-                <ol>
-                    <li>AI changing the future</li>
-                    <li>India's latest cricket victory</li>
-                    <li>New technology trends</li>
-                    <li>Top movies of 2026</li>
-                </ol>
-
-            </section>
-
-
-            <!-- RECENT -->
-
-            <section>
-
-                <h2>Recent</h2>
-
-                <ul>
-                    <li>New privacy bill passed</li>
-                    <li>Latest sports updates</li>
-                    <li>New AI tools released</li>
-                    <li>Entertainment news</li>
-                </ul>
-
-            </section>
-
-        </aside>
-
+    <div class="hero">
+      <h2>Authentic Flavours, Homely Taste</h2>
     </div>
+    <main>
+      <section id="special">
+        <h2 class="section-title">Today's Special</h2>
+        <article>
+          <h3>Paneer Butter Masala Thali</h3>
+          <p>Served with butter naan, dal, rice, and a sweet of the day.</p>
+        </article>
+      </section>
+      <section id="menu">
+        <h2 class="section-title">Menu</h2>
+        <div class="menu-category">
+          <h3>Veg</h3>
+          <ul>
+            <li>
+              Panner
+              <ul>
+                <li>Paneer Tikka</li>
+                <li>Paneer Butter Masala</li>
+              </ul>
+            </li>
+            <li>
+              Dal
+              <ul>
+                <li>Dal Makhani</li>
+                <li>Dal Tadka</li>
+              </ul>
+            </li>
+            <li>
+              Rice
+              <ul>
+                <li>Jeera Rice</li>
+                <li>Veg Pulao</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-category">
+          <h3>Dessert</h3>
+          <ul>
+            <li>
+              Icecream
+              <ul>
+                <li>Vanilla</li>
+                <li>Kesar Pista</li>
+              </ul>
+            </li>
+            <li>Gulab Jamun</li>
+          </ul>
+        </div>
+      </section>
+      <section id="gallery">
+        <h2 class="section-title">Gallery</h2>
+        <figure>
+            <img src="paneertikka.png" alt="paneer">
+            <figcaption>Paneer Tikka</figcaption>
+        </figure>
+         <figure>
+            <img src="daalmakhani.png" alt="dal">
+            <figcaption>Dal Makhani</figcaption>
+        </figure>
+         <figure>
+            <img src="gulabjamun.png" alt="gulabjamun">
+            <figcaption>Gulab Jamun</figcaption>
+        </figure>
 
+      </section>
+      <section id="reviews">
+        <h2 class="section-title">Customer Reviews</h2>
 
-    <!-- FOOTER -->
-
+      </section>
+      <section id="hours">
+        <h2 class="section-title">Opening Hours</h2>
+        <div class="reviews">
+            <article>
+                <h3>Priya Sharma</h3>
+                <p>★★★★★</p>
+                <p>Best paneer tikka in town, highly recommend!</p>
+            </article>
+            <article>
+                <h3>Amit Verma</h3>
+                <p>★★★★☆</p>
+                <p>Great ambience and quick service.</p>
+            </article>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Lunch</th>
+              <th>Dinner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mon</td>
+              <td>12 - 3 PM</td>
+              <td>7 - 11 PM</td>
+            </tr>
+            <tr>
+              <td>Tue</td>
+              <td>12 - 3 PM</td>
+              <td>7 - 11 PM</td>
+            </tr>
+            <tr>
+              <td>Wed</td>
+              <td>12 - 3 PM</td>
+              <td>7 - 11 PM</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="contact"></section>
+    </main>
     <footer>
-        &copy; 2026 Daily Pulse News Network
+      <p>123 MG Road, Agra | +91 999999999</p>
+      <p>&copy; 2026 Spice Route Restaurant</p>
     </footer>
-
-</body>
-
+  </body>
 </html>
